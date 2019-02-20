@@ -12,18 +12,18 @@ namespace MovieStore.Models
     public class Movie
     {
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
         [ForeignKey("Director")]
+        [Required]
         public int Director_Id { get; set; }
+        [Required]
         public Director Director { get; set; }
-
         [DisplayName("ReleseDate")]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         //public DateTime StartDate { get; set; }
         public DateTime ReleseDate {get; set;}
-
-
         public DateTime Created_Date { get; set; }
         [ForeignKey("IdentityUser")]
         public string Created_By { get; set; }
