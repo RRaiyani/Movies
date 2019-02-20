@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +11,9 @@ namespace MovieStore.Models
     public class Director
     {
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         [ForeignKey("Genre")]
         public int GenreId { get; set; }
         public virtual Genre Genre { get; set; }        
