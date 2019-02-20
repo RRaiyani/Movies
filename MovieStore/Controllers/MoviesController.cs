@@ -118,6 +118,7 @@ namespace MovieStore.Controllers
                     var identityUser = await _UserManager.GetUserAsync(User);
                     edt.Created_By = identityUser.Id;
                     edt.Director_Id = movie.Director_Id;
+                    edt.ReleseDate = movie.ReleseDate;
 
                     _context.Update(edt);
                     await _context.SaveChangesAsync();
